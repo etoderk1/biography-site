@@ -1,451 +1,83 @@
 <!DOCTYPE html>
-<!-- saved from url=(0023)https://www.bobpvp.xyz/ -->
-<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eto1111 Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./Holy Paimon Portfolio_files/css2" rel="stylesheet">
-    <link rel="stylesheet" href="./Holy Paimon Portfolio_files/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="icon" href="https://iconape.com/wp-content/files/lg/368002/png/368002.png" type="image/x-icon">
-    <style>
-        /* Общие стили */
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            font-family: "Roboto Mono", monospace;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            font-weight: 400;
-            line-height: 1.6;
-            position: relative;
-            overflow: hidden;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Панель в стиле macOS -->
+    <div class="macos-top-bar">
+        <div class="macos-menu">
+            <span class="macos-menu-item">eto1111</span>
+            <span class="macos-menu-item">Файл</span>
+            <span class="macos-menu-item">Правка</span>
+            <span class="macos-menu-item">Вид</span>
+        </div>
+        <div class="macos-time">
+            <span id="macos-time">12:00 PM</span>
+        </div>
+    </div>
 
-        /* Подсветка фона для создания эффекта свечения во всем дизайне */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(30, 30, 40, 0.2) 0%, rgba(10, 10, 10, 1) 70%);
-            pointer-events: none;
-            z-index: -1;
-        }
+    <!-- Основной контент -->
+    <div class="container">
+        <!-- Окно "Обо мне" -->
+        <div class="macos-window">
+            <div class="macos-window-header">
+                <div class="macos-window-controls">
+                    <span class="macos-close"></span>
+                    <span class="macos-minimize"></span>
+                    <span class="macos-maximize"></span>
+                </div>
+                <div class="macos-window-title">About Me</div>
+            </div>
+            <div class="macos-window-content">
+                <h2>eto1111</h2>
+                <p>Возраст: 16</p>
+                <p>Страна: Россия</p>
+            </div>
+        </div>
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            justify-items: center;
-            align-items: stretch;
-        }
+        <!-- Окно "Контакты" -->
+        <div class="macos-window">
+            <div class="macos-window-header">
+                <div class="macos-window-controls">
+                    <span class="macos-close"></span>
+                    <span class="macos-minimize"></span>
+                    <span class="macos-maximize"></span>
+                </div>
+                <div class="macos-window-title">Контакты</div>
+            </div>
+            <div class="macos-window-content">
+                <p>Discord: <span class="contact">eto1111</span></p>
+                <p>Telegram: <span class="contact">@devgptai</span></p>
+                <p>Minecraft: <span class="contact">derk_yt</span></p>
+            </div>
+        </div>
 
-        .window {
-            background-color: #111111; /* Изменено с #0a0a0a на #111111 */
-            border-radius: 12px;
-            padding: 20px;
-            border: 2px solid rgba(80, 80, 80, 0.3); /* Более заметные рамки */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-            position: relative;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            width: 100%;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
+        <!-- Окно "Навыки" -->
+        <div class="macos-window">
+            <div class="macos-window-header">
+                <div class="macos-window-controls">
+                    <span class="macos-close"></span>
+                    <span class="macos-minimize"></span>
+                    <span class="macos-maximize"></span>
+                </div>
+                <div class="macos-window-title">Навыки</div>
+            </div>
+            <div class="macos-window-content">
+                <h2>Языки программирования</h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-        /* Эффект свечения вокруг окон */
-        .window::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 14px;
-            background: linear-gradient(45deg,
-                rgba(85, 85, 85, 0.1),
-                rgba(100, 100, 100, 0.05),
-                rgba(85, 85, 85, 0.1));
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .window:hover {
-            border-color: rgba(120, 120, 120, 0.7); /* Усиленный цвет рамки при наведении */
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.08);
-            transform: translateY(-3px) scale(1.02);
-        }
-
-        .window:hover::after {
-            opacity: 1;
-        }
-
-        h2 {
-            font-size: 1.1em;
-            margin-bottom: 12px;
-            color: #eee;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 2;
-        }
-
-        p {
-            font-size: 0.9em;
-            color: #ccc;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Стили для отдельных окон */
-        #main {
-            text-align: center;
-        }
-
-        #main .nickname {
-            font-size: 1.8em;
-            margin-bottom: 8px;
-            font-weight: 300;
-            color: #fff;
-            position: relative;
-            z-index: 2;
-            /* Улучшенный bloom эффект */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
-            animation: intense-glow 3s infinite alternate;
-        }
-
-        /* Эффект свечения распространяется на фон за текстом */
-        #main .nickname::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 140%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.7;
-            filter: blur(15px);
-            animation: pulse-glow 4s infinite alternate;
-        }
-
-        @keyframes intense-glow {
-            0% {
-                text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
-            }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
-            }
-        }
-
-        @keyframes pulse-glow {
-            0% {
-                opacity: 0.5;
-                width: 130%;
-                height: 180%;
-            }
-            100% {
-                opacity: 0.9;
-                width: 160%;
-                height: 220%;
-            }
-        }
-
-        #contacts p {
-            margin-bottom: 5px;
-        }
-
-        .contact {
-            color: #999;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-
-        .contact:hover {
-            color: #ddd;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Улучшенные стили для time и weather */
-        #time,
-        #weather {
-            text-align: center;
-        }
-
-        #time p,
-        #weather p {
-            font-size: 1.0em;
-            margin-bottom: 0;
-            color: #ddd;
-        }
-
-        /* Подсветка для данных о времени и погоде */
-        #time-p,
-        #weather-p {
-            color: #fff;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-            font-size: 1.2em !important;
-            font-weight: 500;
-            margin-bottom: 5px !important;
-        }
-
-        #projects {
-            text-align: center;
-        }
-
-        #language p {
-            margin-bottom: 5px;
-        }
-
-        .title-bar {
-            color: #ddd;
-            padding: 0;
-            border-radius: 0;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-            font-weight: 400;
-            text-align: left;
-            letter-spacing: 0.3px;
-            backdrop-filter: none;
-            display: flex;
-            align-items: center;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            position: relative;
-            z-index: 2;
-            transition: text-shadow 0.3s ease;
-        }
-
-        /* Bloom эффект для icon в title-bar */
-        .title-bar i {
-            margin-right: 8px;
-            color: #fff;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .window:hover .title-bar i {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-        }
-
-        /* Улучшенный разделитель между title-bar и контентом */
-        .window::before {
-            content: '';
-            position: absolute;
-            top: 45px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%;
-            height: 1px;
-            background: linear-gradient(90deg,
-                rgba(255, 255, 255, 0.01) 0%,
-                rgba(255, 255, 255, 0.15) 50%,
-                rgba(255, 255, 255, 0.01) 100%);
-            z-index: 1;
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-        }
-
-        .window .content {
-            margin-top: 10px;
-            z-index: 2;
-            position: relative;
-        }
-
-        /* Улучшенный градиентный след за курсором */
-        .cursor-gradient {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0.15;
-            background: radial-gradient(circle,
-                rgba(255, 255, 255, 0.8) 0%,
-                rgba(255, 255, 255, 0.2) 40%,
-                rgba(255, 255, 255, 0) 70%);
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            filter: blur(10px);
-            mix-blend-mode: screen;
-            transition: opacity 0.2s ease;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: auto;
-            padding: 15px 0;
-            color: #666;
-            font-size: 0.7em;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            text-shadow: 0 0 5px rgba(100, 100, 100, 0.2);
-        }
-
-        /* Улучшенный стиль списка скиллов */
-        #skills {
-            text-align: center;
-        }
-
-        #skills h2 {
-            margin-bottom: 15px;
-        }
-
-        #skills ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #skills li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 20px;
-            transition: all 0.3s ease;
-        }
-
-        #skills li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #50fa7b;
-            font-size: 1.2em;
-            text-shadow: 0 0 8px rgba(80, 250, 123, 0.7);
-            transition: all 0.3s ease;
-        }
-
-        #skills li.inactive::before {
-            color: #ff79c6;
-            text-shadow: 0 0 8px rgba(255, 121, 198, 0.7);
-        }
-
-        #skills li:hover {
-            transform: translateX(5px);
-        }
-
-        #skills li:hover::before {
-            transform: scale(1.2);
-        }
-
-        /* Стили для экрана входа */
-        #entry-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 9999;
-            transition: opacity 1s ease, visibility 1s ease;
-        }
-
-        #entry-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #entry-button {
-            font-family: "Roboto Mono", monospace;
-            background-color: #111111; /* Фон как у окон */
-            border: 2px solid rgba(80, 80, 80, 0.3); /* Рамка как у окон */
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.5em;
-            cursor: pointer;
-            border-radius: 12px; /* Скругление углов как у окон */
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05); /* Тень как у окон */
-            /* Backdrop-filter, если хотите полупрозрачность как у окон,
-               но это будет видно только если у #entry-screen не полностью черный фон. */
-            backdrop-filter: blur(10px);
-        }
-
-        #entry-button::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 14px; /* Скругление углов как у окон */
-            background: linear-gradient(45deg,
-                rgba(85, 85, 85, 0.1),
-                rgba(100, 100, 100, 0.05),
-                rgba(85, 85, 85, 0.1)); /* Градиент как у окон */
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        #entry-button:hover {
-            border-color: rgba(120, 120, 120, 0.7); /* Рамка при наведении */
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.08); /* Тень при наведении */
-            transform: translateY(-3px) scale(1.02);
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Тень текста при наведении */
-        }
-
-        #entry-button:hover::before {
-            opacity: 1;
-        }
-
-        #entry-button:active {
-            transform: scale(0.98);
-        }
-
-        /* Стили для ползунка громкости */
-        #volume-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #111111; /* Изменено с #0a0a0a на #111111 */
-            border: 2px solid rgba(80, 80, 80, 0.3);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        #volume-control:hover {
-            border-color: rgba(120, 120, 120, 0.7);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.08);
-        }
-
-        #volume-icon {
-            color: #ddd;
-            margin-right: 8px;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-        }
-
-        #volume-slider {
-            -webkit-appearance: none;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #50fa7b 0%, #50fa7b 50%, #333 50%, #333 100
+    <script src="script.js"></script>
+</body>
+</html>
