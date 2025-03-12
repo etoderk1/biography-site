@@ -1,63 +1,767 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0023)https://www.bobpvp.xyz/ -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Биография</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Holy Paimon Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Holy Paimon Portfolio_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Holy Paimon Portfolio_files/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="https://iconape.com/wp-content/files/lg/368002/png/368002.png" type="image/x-icon">
+    <style>
+        /* Общие стили */
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+            font-family: "Roboto Mono", monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-weight: 400;
+            line-height: 1.6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Подсветка фона для создания эффекта свечения во всем дизайне */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(30, 30, 40, 0.2) 0%, rgba(10, 10, 10, 1) 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            align-items: stretch;
+        }
+
+        .window {
+            background-color: #111111; /* Изменено с #0a0a0a на #111111 */
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid rgba(80, 80, 80, 0.3); /* Более заметные рамки */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Эффект свечения вокруг окон */
+        .window::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 14px;
+            background: linear-gradient(45deg,
+                rgba(85, 85, 85, 0.1),
+                rgba(100, 100, 100, 0.05),
+                rgba(85, 85, 85, 0.1));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .window:hover {
+            border-color: rgba(120, 120, 120, 0.7); /* Усиленный цвет рамки при наведении */
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .window:hover::after {
+            opacity: 1;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: #eee;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        p {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Стили для отдельных окон */
+        #main {
+            text-align: center;
+        }
+
+        #main .nickname {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            font-weight: 300;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            /* Улучшенный bloom эффект */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+            animation: intense-glow 3s infinite alternate;
+        }
+
+        /* Эффект свечения распространяется на фон за текстом */
+        #main .nickname::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.7;
+            filter: blur(15px);
+            animation: pulse-glow 4s infinite alternate;
+        }
+
+        @keyframes intense-glow {
+            0% {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                opacity: 0.5;
+                width: 130%;
+                height: 180%;
+            }
+            100% {
+                opacity: 0.9;
+                width: 160%;
+                height: 220%;
+            }
+        }
+
+        #contacts p {
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            color: #999;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .contact:hover {
+            color: #ddd;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Улучшенные стили для time и weather */
+        #time,
+        #weather {
+            text-align: center;
+        }
+
+        #time p,
+        #weather p {
+            font-size: 1.0em;
+            margin-bottom: 0;
+            color: #ddd;
+        }
+
+        /* Подсветка для данных о времени и погоде */
+        #time-p,
+        #weather-p {
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+            font-size: 1.2em !important;
+            font-weight: 500;
+            margin-bottom: 5px !important;
+        }
+
+        #projects {
+            text-align: center;
+        }
+
+        #language p {
+            margin-bottom: 5px;
+        }
+
+        .title-bar {
+            color: #ddd;
+            padding: 0;
+            border-radius: 0;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            font-weight: 400;
+            text-align: left;
+            letter-spacing: 0.3px;
+            backdrop-filter: none;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 2;
+            transition: text-shadow 0.3s ease;
+        }
+
+        /* Bloom эффект для icon в title-bar */
+        .title-bar i {
+            margin-right: 8px;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .window:hover .title-bar i {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+        }
+
+        /* Улучшенный разделитель между title-bar и контентом */
+        .window::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(255, 255, 255, 0.01) 0%,
+                rgba(255, 255, 255, 0.15) 50%,
+                rgba(255, 255, 255, 0.01) 100%);
+            z-index: 1;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .window .content {
+            margin-top: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Улучшенный градиентный след за курсором */
+        .cursor-gradient {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.15;
+            background: radial-gradient(circle,
+                rgba(255, 255, 255, 0.8) 0%,
+                rgba(255, 255, 255, 0.2) 40%,
+                rgba(255, 255, 255, 0) 70%);
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            filter: blur(10px);
+            mix-blend-mode: screen;
+            transition: opacity 0.2s ease;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 15px 0;
+            color: #666;
+            font-size: 0.7em;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            text-shadow: 0 0 5px rgba(100, 100, 100, 0.2);
+        }
+
+        /* Улучшенный стиль списка скиллов */
+        #skills {
+            text-align: center;
+        }
+
+        #skills h2 {
+            margin-bottom: 15px;
+        }
+
+        #skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #skills li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+            transition: all 0.3s ease;
+        }
+
+        #skills li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #50fa7b;
+            font-size: 1.2em;
+            text-shadow: 0 0 8px rgba(80, 250, 123, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        #skills li.inactive::before {
+            color: #ff79c6;
+            text-shadow: 0 0 8px rgba(255, 121, 198, 0.7);
+        }
+
+        #skills li:hover {
+            transform: translateX(5px);
+        }
+
+        #skills li:hover::before {
+            transform: scale(1.2);
+        }
+
+        /* Стили для экрана входа */
+        #entry-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        #entry-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #entry-button {
+            font-family: "Roboto Mono", monospace;
+            background-color: #111111; /* Фон как у окон */
+            border: 2px solid rgba(80, 80, 80, 0.3); /* Рамка как у окон */
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 12px; /* Скругление углов как у окон */
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.05); /* Тень как у окон */
+            /* Backdrop-filter, если хотите полупрозрачность как у окон,
+               но это будет видно только если у #entry-screen не полностью черный фон. */
+            backdrop-filter: blur(10px);
+        }
+
+        #entry-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 14px; /* Скругление углов как у окон */
+            background: linear-gradient(45deg,
+                rgba(85, 85, 85, 0.1),
+                rgba(100, 100, 100, 0.05),
+                rgba(85, 85, 85, 0.1)); /* Градиент как у окон */
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #entry-button:hover {
+            border-color: rgba(120, 120, 120, 0.7); /* Рамка при наведении */
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.08); /* Тень при наведении */
+            transform: translateY(-3px) scale(1.02);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Тень текста при наведении */
+        }
+
+        #entry-button:hover::before {
+            opacity: 1;
+        }
+
+        #entry-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Стили для ползунка громкости */
+        #volume-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #111111; /* Изменено с #0a0a0a на #111111 */
+            border: 2px solid rgba(80, 80, 80, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        #volume-control:hover {
+            border-color: rgba(120, 120, 120, 0.7);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.08);
+        }
+
+        #volume-icon {
+            color: #ddd;
+            margin-right: 8px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+
+        #volume-slider {
+            -webkit-appearance: none;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #50fa7b 0%, #50fa7b 50%, #333 50%, #333 100%);
+            outline: none;
+            border-radius: 2px;
+        }
+
+        #volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        #volume-slider::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Адаптивная верстка */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            #volume-control {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            #volume-slider {
+                width: 60px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>Моя биография</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#achievements">Достижения</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Экран приветствия -->
+    <div id="entry-screen" class="hidden">
+        <button id="entry-button">Click to Enter</button>
+    </div>
 
-    <section id="about">
-        <h2>Обо мне</h2>
-        <p>Привет! Меня зовут Илья. Я увлекаюсь minecraft, и моя цель — апнуть на моем сервере большой онлайн.</p>
-        <p>Я родился в [город/страна], и с детства меня интересовало [ваши интересы].</p>
-    </section>
+    <!-- Аудио плеер -->
+    <audio id="background-music" loop="">
+        <source src="1.mp3" type="audio/mp3">
+    </audio>
 
-    <section id="skills">
-        <h2>Навыки</h2>
-        <ul>
-            <li>Навык 1</li>
-            <li>Навык 2</li>
-            <li>Навык 3</li>
-        </ul>
-    </section>
+    <!-- Контроль громкости -->
+    <div id="volume-control">
+        <i id="volume-icon" class="fas fa-volume-up"></i>
+        <input type="range" id="volume-slider" min="0" max="100" value="50" style="background: linear-gradient(90deg, rgb(80, 250, 123) 0%, rgb(80, 250, 123) 50%, rgb(51, 51, 51) 50%, rgb(51, 51, 51) 100%);">
+    </div>
 
-    <section id="achievements">
-        <h2>Достижения</h2>
-        <p>Вот некоторые из моих достижений:</p>
-        <ul>
-            <li>Достижение 1</li>
-            <li>Достижение 2</li>
-            <li>Достижение 3</li>
-        </ul>
-    </section>
+    <div class="cursor-gradient" style="left: 1872.98px; top: 6.04578px; opacity: 0.15;"></div>
 
-    <section id="contact">
-        <h2>Контакты</h2>
-        <p>Свяжитесь со мной:</p>
-        <ul>
-            <li>Email: example@example.com</li>
-            <li>Телефон: +7 (XXX) XXX-XX-XX</li>
-            <li>Социальные сети: <a href="https://t.me/devgptai" target="_blank">VK</a></li>
-        </ul>
-    </section>
+    <div class="container">
 
+        <div class="window" id="time">
+            <div class="title-bar"><i class="far fa-clock"></i>Time.java</div>
+            <div class="content">
+                <p id="time-p">18:02:37</p>
+            </div>
+        </div>
+
+        <div class="window" id="main">
+            <div class="title-bar"><i class="fas fa-user"></i>About.java</div>
+            <div class="content">
+                <p class="nickname">Holy Paimon</p>
+                <p>Возраст: 15</p>
+                <p>Страна: Lithuania</p>
+            </div>
+        </div>
+
+        <div class="window" id="weather">
+            <div class="title-bar"><i class="fas fa-cloud-sun"></i>Weather.java</div>
+            <div class="content">
+                <p id="weather-p">scattered clouds, 4.49°C</p>
+            </div>
+        </div>
+
+        <div class="window" id="projects">
+            <div class="title-bar"><i class="fas fa-code"></i>Projects.java</div>
+            <div class="content">
+                <h2>Просмотреть все проекты</h2>
+                <p>Здесь будут мои проекты...</p>
+            </div>
+        </div>
+
+        <div class="window" id="contacts">
+            <div class="title-bar"><i class="fas fa-envelope"></i>Contacts.java</div>
+            <div class="content">
+                <p>Discord: <span class="contact">wearewinners</span></p>
+                <p>Telegram: <span class="contact">@PaimonSpigot</span></p>
+                <p>Minecraft: <span class="contact">dashandslash</span></p>
+            </div>
+        </div>
+
+        <div class="window" id="skills">
+            <div class="title-bar"><i class="fas fa-tools"></i>Skills.java</div>
+            <div class="content">
+                <h2>Языки программирования</h2>
+                <ul>
+                    <li>TypeScript</li>
+                    <li class="inactive">Java</li>
+                    <li class="inactive">Lua</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
     <footer>
-        <p>&copy; 2025 Derk. Все права защищены.</p>
+        Copyright © 2025 Holy Paimon. All rights reserved.
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        // Референсы на элементы DOM
+        const entryScreen = document.getElementById('entry-screen');
+        const entryButton = document.getElementById('entry-button');
+        const backgroundMusic = document.getElementById('background-music');
+        const volumeSlider = document.getElementById('volume-slider');
+        const volumeIcon = document.getElementById('volume-icon');
+        const cursorGradient = document.querySelector('.cursor-gradient');
+
+        // Функция для входа на сайт
+        function enterSite() {
+            entryScreen.classList.add('hidden');
+
+            // Воспроизведение музыки с уменьшенной громкостью (в 5 раз тише)
+            backgroundMusic.volume = (volumeSlider.value / 100) / 12;
+            backgroundMusic.play().catch(error => {
+                console.error('Ошибка воспроизведения аудио:', error);
+            });
+        }
+
+        // Обработчик для кнопки входа
+        entryButton.addEventListener('click', enterSite);
+
+        // Управление звуком с уменьшением в 5 раз
+        volumeSlider.addEventListener('input', () => {
+            const volume = (volumeSlider.value / 100) / 12;
+            backgroundMusic.volume = volume;
+
+            // Обновление градиента ползунка
+            volumeSlider.style.background = `linear-gradient(90deg, 
+                #50fa7b 0%, 
+                #50fa7b ${volumeSlider.value}%, 
+                #333 ${volumeSlider.value}%, 
+                #333 100%)`;
+
+            // Обновление иконки звука
+            if (volume === 0) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (volume < 0.1) { // Изменено условие для соответствия пониженной громкости
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        });
+
+        // Инициализация градиента ползунка
+        volumeSlider.style.background = `linear-gradient(90deg, 
+            #50fa7b 0%, 
+            #50fa7b ${volumeSlider.value}%, 
+            #333 ${volumeSlider.value}%, 
+            #333 100%)`;
+
+        // Клик на иконку звука для включения/выключения звука
+        volumeIcon.addEventListener('click', () => {
+            if (backgroundMusic.volume > 0) {
+                // Запоминаем текущую громкость перед выключением
+                volumeIcon.dataset.prevVolume = volumeSlider.value;
+                volumeSlider.value = 0;
+                backgroundMusic.volume = 0;
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else {
+                // Восстанавливаем предыдущую громкость (с учетом уменьшения в 5 раз)
+                const prevVolume = volumeIcon.dataset.prevVolume || 50;
+                volumeSlider.value = prevVolume;
+                backgroundMusic.volume = (prevVolume / 100) / 12;
+
+                if (prevVolume < 50) {
+                    volumeIcon.className = 'fas fa-volume-down';
+                } else {
+                    volumeIcon.className = 'fas fa-volume-up';
+                }
+            }
+            // Обновление градиента ползунка
+            volumeSlider.style.background = `linear-gradient(90deg, 
+                #50fa7b 0%, 
+                #50fa7b ${volumeSlider.value}%, 
+                #333 ${volumeSlider.value}%, 
+                #333 100%)`;
+        });
+
+        // Улучшенный градиентный след за курсором
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Плавное следование градиента за курсором
+        function animateCursor() {
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
+
+            cursorX += dx * 0.1;
+            cursorY += dy * 0.1;
+
+            if (cursorGradient) {
+                cursorGradient.style.left = cursorX + 'px';
+                cursorGradient.style.top = cursorY + 'px';
+            }
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Функция для получения текущего времени в Вильнюсе и обновления элемента
+        function updateVilniusTime() {
+            const timeElement = document.getElementById('time-p');
+            if (timeElement) {
+                const options = {
+                    timeZone: 'Europe/Vilnius',
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                };
+                const now = new Date();
+                timeElement.textContent = now.toLocaleTimeString('ru-RU', options);
+            }
+        }
+
+        // Функция для получения погоды в Вильнюсе и обновления элемента
+        async function updateVilniusWeather() {
+            const weatherElement = document.getElementById('weather-p');
+            if (weatherElement) {
+                const cachedWeatherData = localStorage.getItem('vilniusWeatherData');
+                const cachedTime = localStorage.getItem('vilniusWeatherTime');
+
+                if (cachedWeatherData && cachedTime && (Date.now() - cachedTime < 1800000)) {
+                    const weatherData = JSON.parse(cachedWeatherData);
+                    weatherElement.textContent = `${weatherData.description}, ${weatherData.temperature}°C`;
+                    return;
+                }
+
+                try {
+                    const apiKey = '3d9ea87199eacc182be9a3351d864ae8';
+                    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Vilnius&appid=${apiKey}&units=metric`;
+
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        const temperature = data.main.temp;
+                        const description = data.weather[0].description;
+                        weatherElement.textContent = `${description}, ${temperature}°C`;
+
+                        const weatherData = {
+                            temperature,
+                            description
+                        };
+                        localStorage.setItem('vilniusWeatherData', JSON.stringify(weatherData));
+                        localStorage.setItem('vilniusWeatherTime', Date.now());
+                    } else {
+                        weatherElement.textContent = 'Не удалось получить данные о погоде';
+                    }
+                } catch (error) {
+                    console.error('Ошибка при получении данных о погоде:', error);
+                    weatherElement.textContent = 'Ошибка получения данных';
+                }
+            }
+        }
+
+        // Добавляем интерактивности к окнам
+        const windows = document.querySelectorAll('.window');
+        windows.forEach(window => {
+            window.addEventListener('mouseenter', () => {
+                cursorGradient.style.opacity = '0.05';
+            });
+
+            window.addEventListener('mouseleave', () => {
+                cursorGradient.style.opacity = '0.15';
+            });
+        });
+
+        setInterval(updateVilniusTime, 1000); // Обновление каждую секунду для большей интерактивности
+        setInterval(updateVilniusWeather, 1800000);
+
+        updateVilniusTime();
+        updateVilniusWeather();
+    </script>
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+
+</body></html>
