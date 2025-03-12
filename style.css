@@ -2,9 +2,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Tahoma', 'Arial', sans-serif;
-    background-color: #008080; /* Фон в стиле Windows XP */
-    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,20 +18,20 @@ body {
     padding: 20px;
 }
 
-/* Окна в стиле Windows XP */
-.windows-xp-window {
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 0;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+/* Окна в стиле Windows */
+.windows-window {
+    background-color: #1e1e1e; /* Темно-серый фон окна */
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     width: 300px;
     overflow: hidden;
 }
 
-.windows-xp-window-header {
-    background-color: #000080; /* Синий заголовок */
+.windows-window-header {
+    background-color: #333; /* Темный заголовок */
     color: #fff;
-    padding: 5px 10px;
+    padding: 8px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,62 +39,62 @@ body {
     font-weight: bold;
 }
 
-.windows-xp-window-controls {
+.windows-window-controls {
     display: flex;
     gap: 5px;
 }
 
-.windows-xp-minimize,
-.windows-xp-maximize,
-.windows-xp-close {
+.windows-minimize,
+.windows-maximize,
+.windows-close {
     width: 12px;
     height: 12px;
-    background-color: #fff;
-    border: 1px solid #000;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.windows-xp-minimize {
+.windows-minimize {
     background-color: #ffcc00; /* Желтый для "Свернуть" */
 }
 
-.windows-xp-maximize {
+.windows-maximize {
     background-color: #00cc00; /* Зеленый для "Развернуть" */
 }
 
-.windows-xp-close {
+.windows-close {
     background-color: #cc0000; /* Красный для "Закрыть" */
 }
 
-.windows-xp-window-content {
+.windows-window-content {
     padding: 20px;
 }
 
-.windows-xp-window-content h2 {
+.windows-window-content h2 {
     margin-top: 0;
     font-size: 1.5em;
-    color: #000080; /* Синий цвет для заголовков */
+    color: #fff; /* Белый цвет для заголовков */
 }
 
-.windows-xp-window-content p {
+.windows-window-content p {
     margin: 10px 0;
     font-size: 1em;
-    color: #000;
+    color: #ccc; /* Светло-серый текст */
 }
 
-.windows-xp-window-content ul {
+.windows-window-content ul {
     list-style: none;
     padding: 0;
 }
 
-.windows-xp-window-content li {
+.windows-window-content li {
     margin: 10px 0;
     font-size: 1em;
+    color: #ccc; /* Светло-серый текст */
 }
 
 /* Адаптивность */
 @media (max-width: 600px) {
-    .windows-xp-window {
+    .windows-window {
         width: 90%;
     }
 }

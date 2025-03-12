@@ -1,20 +1,27 @@
-// Пример интерактивности (можно добавить больше функционала)
-document.querySelectorAll('.windows-xp-close').forEach(button => {
+// Управление окнами
+document.querySelectorAll('.windows-close').forEach(button => {
     button.addEventListener('click', () => {
-        button.closest('.windows-xp-window').style.display = 'none';
+        button.closest('.windows-window').style.display = 'none';
     });
 });
 
-document.querySelectorAll('.windows-xp-minimize').forEach(button => {
+document.querySelectorAll('.windows-minimize').forEach(button => {
     button.addEventListener('click', () => {
-        const windowContent = button.closest('.windows-xp-window').querySelector('.windows-xp-window-content');
+        const windowContent = button.closest('.windows-window').querySelector('.windows-window-content');
         windowContent.style.display = windowContent.style.display === 'none' ? 'block' : 'none';
     });
 });
 
-document.querySelectorAll('.windows-xp-maximize').forEach(button => {
+document.querySelectorAll('.windows-maximize').forEach(button => {
     button.addEventListener('click', () => {
-        const window = button.closest('.windows-xp-window');
+        const window = button.closest('.windows-window');
         window.style.width = window.style.width === '90%' ? '300px' : '90%';
     });
+});
+
+// Фоновая музыка
+const backgroundMusic = document.getElementById('background-music');
+backgroundMusic.volume = 0.3; // Уменьшаем громкость
+backgroundMusic.play().catch(error => {
+    console.error('Ошибка воспроизведения аудио:', error);
 });
