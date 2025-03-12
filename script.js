@@ -39,10 +39,10 @@ volumeSlider.addEventListener('input', () => {
     }
 });
 
-// Кружок, который следует за курсором
-const cursorCircle = document.getElementById('cursor-circle');
+// Градиентный след за курсором
+const cursorGradient = document.querySelector('.cursor-gradient');
 
 document.addEventListener('mousemove', (e) => {
-    cursorCircle.style.left = `${e.clientX}px`;
-    cursorCircle.style.top = `${e.clientY}px`;
+    cursorGradient.style.left = `${e.clientX}px`;
+    cursorGradient.style.top = `${e.clientY}px`;
 });
