@@ -21,7 +21,28 @@ document.querySelectorAll('.windows-maximize').forEach(button => {
 
 // Фоновая музыка
 const backgroundMusic = document.getElementById('background-music');
-backgroundMusic.volume = 0.3; // Уменьшаем громкость
-backgroundMusic.play().catch(error => {
-    console.error('Ошибка воспроизведения аудио:', error);
+const volumeSlider = document.getElementById('volume-slider');
+const volumeIcon = document.getElementById('volume-icon');
+
+backgroundMusic.volume = volumeSlider.value / 100; // Устанавливаем начальную громкость
+
+volumeSlider.addEventListener('input', () => {
+    backgroundMusic.volume = volumeSlider.value / 100;
+
+    // Меняем иконку в зависимости от громкости
+    if (volumeSlider.value == 0) {
+        volumeIcon.className = 'fas fa-volume-mute';
+    } else if (volumeSlider.value < 50) {
+        volumeIcon.className = 'fas fa-volume-down';
+    } else {
+        volumeIcon.className = 'fas fa-volume-up';
+    }
+});
+
+// Кружок, который следует за курсором
+const cursorCircle = document.getElementById('cursor-circle');
+
+document.addEventListener('mousemove', (e) => {
+    cursorCircle.style.left = `${e.clientX}px`;
+    cursorCircle.style.top = `${e.clientY}px`;
 });
