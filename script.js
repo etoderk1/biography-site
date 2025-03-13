@@ -39,15 +39,21 @@ volumeSlider.addEventListener('input', () => {
     }
 });
 
-// Копирование IP
-const copyIpButton = document.getElementById('copy-ip-button');
-copyIpButton.addEventListener('click', () => {
-    const ip = 'play.spinbox.fun';
-    navigator.clipboard.writeText(ip).then(() => {
-        alert('IP скопирован: ' + ip);
-    }).catch(() => {
-        alert('Не удалось скопировать IP');
-    });
+// Градиентный след за курсором
+const cursorGradient = document.querySelector('.cursor-gradient');
+
+document.addEventListener('mousemove', (e) => {
+    cursorGradient.style.left = `${e.clientX}px`;
+    cursorGradient.style.top = `${e.clientY}px`;
 });
 
-// Перемещение окон
+// Экран входа
+const entryScreen = document.getElementById('entry-screen');
+const entryButton = document.getElementById('entry-button');
+
+entryButton.addEventListener('click', () => {
+    entryScreen.classList.add('hidden');
+    backgroundMusic.play().catch(error => {
+        console.error('Ошибка воспроизведения аудио:', error);
+    });
+});
