@@ -338,11 +338,6 @@ footer {
 }
 
 .windows-window {
-    position: absolute;
+    position: relative; /* или fixed, в зависимости от вашего дизайна */
     user-select: none;
-    cursor: grab;
-}
-
-.windows-window:active {
-    cursor: grabbing;
 }
