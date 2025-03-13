@@ -39,21 +39,29 @@ volumeSlider.addEventListener('input', () => {
     }
 });
 
-// Градиентный след за курсором
-const cursorGradient = document.querySelector('.cursor-gradient');
-
-document.addEventListener('mousemove', (e) => {
-    cursorGradient.style.left = `${e.clientX}px`;
-    cursorGradient.style.top = `${e.clientY}px`;
-});
-
-// Экран входа
-const entryScreen = document.getElementById('entry-screen');
-const entryButton = document.getElementById('entry-button');
-
-entryButton.addEventListener('click', () => {
-    entryScreen.classList.add('hidden');
-    backgroundMusic.play().catch(error => {
-        console.error('Ошибка воспроизведения аудио:', error);
+// Копирование IP
+const copyIpButton = document.getElementById('copy-ip-button');
+copyIpButton.addEventListener('click', () => {
+    const ip = 'play.spinbox.fun';
+    navigator.clipboard.writeText(ip).then(() => {
+        alert('IP скопирован: ' + ip);
+    }).catch(() => {
+        alert('Не удалось скопировать IP');
     });
 });
+
+// Перемещение окон
+const windows = document.querySelectorAll('.windows-window');
+
+windows.forEach(window => {
+    const header = window.querySelector('.windows-window-header');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    header.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - window.getBoundingClientRect().left;
+        offsetY = e.clientY - window.getBoundingClientRect().top;
+    });
+
+    document.addEventListener('m
