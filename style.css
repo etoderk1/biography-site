@@ -336,3 +336,13 @@ footer {
 #view-counter i {
     font-size: 1.2em;
 }
+
+.windows-window {
+    position: absolute;
+    user-select: none;
+    cursor: grab;
+}
+
+.windows-window:active {
+    cursor: grabbing;
+}
