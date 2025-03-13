@@ -50,18 +50,4 @@ copyIpButton.addEventListener('click', () => {
     });
 });
 
-// Перемещение окон
-const windows = document.querySelectorAll('.windows-window');
-
-windows.forEach(window => {
-    const header = window.querySelector('.windows-window-header');
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    header.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - window.getBoundingClientRect().left;
-        offsetY = e.clientY - window.getBoundingClientRect().top;
-    });
-
-    document.addEventListener('m
+}
