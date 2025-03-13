@@ -46,3 +46,14 @@ document.addEventListener('mousemove', (e) => {
     cursorGradient.style.left = `${e.clientX}px`;
     cursorGradient.style.top = `${e.clientY}px`;
 });
+
+// Экран входа
+const entryScreen = document.getElementById('entry-screen');
+const entryButton = document.getElementById('entry-button');
+
+entryButton.addEventListener('click', () => {
+    entryScreen.classList.add('hidden');
+    backgroundMusic.play().catch(error => {
+        console.error('Ошибка воспроизведения аудио:', error);
+    });
+});
