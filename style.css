@@ -316,3 +316,23 @@ footer {
         width: 60px;
     }
 }
+
+/* Счетчик просмотров */
+#view-counter {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+}
+
+#view-counter i {
+    font-size: 1.2em;
+}
