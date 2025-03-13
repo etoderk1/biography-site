@@ -49,5 +49,3 @@ copyIpButton.addEventListener('click', () => {
         alert('Не удалось скопировать IP');
     });
 });
-
-}
