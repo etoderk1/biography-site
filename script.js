@@ -68,3 +68,18 @@ copyIpButton.addEventListener('click', () => {
         alert('Не удалось скопировать IP');
     });
 });
+
+// Счетчик просмотров
+const viewCountElement = document.getElementById('view-count');
+
+function updateViewCount() {
+    let views = localStorage.getItem('siteViews');
+    if (!views) {
+        views = 0;
+    }
+    views = parseInt(views) + 1;
+    localStorage.setItem('siteViews', views);
+    viewCountElement.textContent = views;
+}
+
+updateViewCount();
