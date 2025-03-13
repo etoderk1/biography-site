@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eto1111 Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,7 +32,7 @@
     <!-- Основной контент -->
     <div class="container">
         <!-- Окно "Обо мне" -->
-        <div class="windows-window">
+        <div class="windows-window" id="about-window">
             <div class="windows-window-header">
                 <div class="windows-window-title">Обо мне</div>
                 <div class="windows-window-controls">
@@ -48,7 +49,7 @@
         </div>
 
         <!-- Окно "Контакты" -->
-        <div class="windows-window">
+        <div class="windows-window" id="contacts-window">
             <div class="windows-window-header">
                 <div class="windows-window-title">Контакты</div>
                 <div class="windows-window-controls">
@@ -65,7 +66,7 @@
         </div>
 
         <!-- Окно "Мои проекты" -->
-        <div class="windows-window">
+        <div class="windows-window" id="projects-window">
             <div class="windows-window-header">
                 <div class="windows-window-title">Мои проекты</div>
                 <div class="windows-window-controls">
@@ -76,11 +77,10 @@
             </div>
             <div class="windows-window-content">
                 <h2>Spinbox</h2>
-                <img src="spinbox-avatar.png" alt="Spinbox Avatar" class="project-avatar">
                 <div class="project-links">
-                    <a href="https://play.spinbox.fun" target="_blank" class="project-link">
-                        <i class="fas fa-gamepad"></i> Play Spinbox
-                    </a>
+                    <button id="copy-ip-button" class="project-link">
+                        <i class="fas fa-copy"></i> Скопировать IP
+                    </button>
                     <a href="https://discord.gg/ukZ8HghWmE" target="_blank" class="project-link">
                         <i class="fab fa-discord"></i> Discord
                     </a>
